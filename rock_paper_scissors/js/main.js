@@ -1,4 +1,6 @@
 console.log("hello javascript");
+const cover = document.querySelector("#cover");
+const btnReset = document.querySelector("#btnReset");
 const human = document.querySelector("#human");
 const humanItem = document.querySelectorAll("#human ul li");
 const comItem = document.querySelectorAll("#computer ul li");
@@ -57,6 +59,7 @@ for (let i = 0; i < 3; i++) {
     gameStop = setTimeout(restart, 1000);
     if (gameCount === 3) {
       clearTimeout(gameStop);
+      cover.style.display = "flex";
     }
     //resultList.innerHTML = resultList.innerHTML + item;
     resultList.innerHTML += item;
@@ -72,3 +75,10 @@ for (let i = 0; i < 3; i++) {
 // humanItem[2].addEventListener("click", function () {
 //   console.log("가위");
 // });
+
+btnReset.addEventListener("click", function () {
+  cover.style.display = "none";
+  gameCount = 0;
+  resultList.innerHTML = "";
+  restart();
+});
