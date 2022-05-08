@@ -392,13 +392,21 @@
           address: $(this).data("address"),
           link: $(this).data("link"),
         });
+
+        // 아래쪽 컨텐츠 바꾸기...
+        const contentsItem = $(this).parents(".tab").find(".contents ul li");
+        //contentsItem.hide();
+        contentsItem.css({ display: "none" });
+        //contentsItem.eq($(this).index()).show();
+        contentsItem.eq($(this).index()).css({ display: "block" });
+
         return false;
       });
       //   menuList[1].addEventListener("click", function () {
       //     this.classList.add("on");
       //   });
       //loadMap(addressList[0]);
-      menuList.eq(0).trigger("click");
+      menuList.eq(0).trigger("click"); // browser가 해당되는 이벤트를 실행
     </script>
     <footer id="footer">
       <div class="utilMenu">
