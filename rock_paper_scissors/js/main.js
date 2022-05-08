@@ -1,4 +1,5 @@
 console.log("hello javascript");
+const human = document.querySelector("#human");
 const humanItem = document.querySelectorAll("#human ul li");
 const comItem = document.querySelectorAll("#computer ul li");
 const resultList = document.querySelector("#resultList");
@@ -21,39 +22,42 @@ const randomChoice = function () {
 //const comChoiceStop = setInterval(randomChoice, 20); // clearInterval(clearId)
 const num = 100;
 let comChoiceStop = null;
+let gameStop = null;
+let gameCount = 0;
 function restart() {
   comChoiceStop = setInterval(randomChoice, 20);
+  human.classList.remove("off");
 }
 console.log(comChoiceStop);
 restart();
-
 //
-
 //randomChoice();
-
 //
 for (let i = 0; i < 3; i++) {
   humanItem[i].addEventListener("click", function () {
     console.log("comChoiceNum===", comChoiceNum);
     clearInterval(comChoiceStop);
+    human.classList.add("off");
     let item = null;
     if (i === comChoiceNum) {
       console.log("비겼습니다.");
       item = `<li class="draw">D</li>`;
-    } else if (i === 0 && comChoiceNum === 2) {
-      console.log("이겼습니다.");
-      item = `<li class="win">W</li>`;
-    } else if (i === 1 && comChoiceNum === 0) {
-      console.log("이겼습니다.");
-      item = `<li class="win">W</li>`;
-    } else if (i === 2 && comChoiceNum === 1) {
+    } else if (
+      (i === 0 && comChoiceNum === 2) ||
+      (i === 1 && comChoiceNum === 0) ||
+      (i === 2 && comChoiceNum === 1)
+    ) {
       console.log("이겼습니다.");
       item = `<li class="win">W</li>`;
     } else {
       console.log("졌습니다.");
       item = `<li class="lose">L</li>`;
     }
-    setTimeout(restart, 1000);
+    gameCount++;
+    gameStop = setTimeout(restart, 1000);
+    if (gameCount === 3) {
+      clearTimeout(gameStop);
+    }
     //resultList.innerHTML = resultList.innerHTML + item;
     resultList.innerHTML += item;
   });
