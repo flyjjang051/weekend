@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0; }
+
+li { list-style: none; }
+
+body { font-family: "Poppins"; font-size: 16px; }
+
+#game h1 { font-size: 48px; font-weight: 300; text-align: center; text-transform: uppercase; margin: 100px 0; }
+
+#game #computer ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+#game #computer ul li { display: none; }
+
+#game #human { margin-top: 100px; }
+
+#game #human ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+#game #human ul li { margin: 0 10px; }
+
+#game #human ul li img { width: 100px; }

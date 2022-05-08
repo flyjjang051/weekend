@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+body {
+  font-family: "Poppins";
+  font-size: 16px;
+}
+#game {
+  h1 {
+    font-size: 48px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 100px 0;
+  }
+  #computer {
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        display: none;
+      }
+    }
+  }
+  #human {
+    margin-top: 100px;
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        margin: 0 10px;
+        img {
+          width: 100px;
+        }
+      }
+    }
+  }
+}
