@@ -29,3 +29,5 @@ let person = {
 //console.log(person.consoleThis());
 const printThis = person.consoleThis;
 //printThis();
+
+new Swiper("#mainVisual");
