@@ -39,4 +39,28 @@ body {
       }
     }
   }
+  #resultList {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    li {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      font-weight: 500;
+      border-radius: 100%;
+      margin: 0 10px;
+      color: #fff;
+      text-align: center;
+      &.win {
+        background-color: rgb(4, 82, 208);
+      }
+      &.draw {
+        background-color: rgb(96, 96, 96);
+      }
+      &.lose {
+        background-color: rgb(209, 0, 0);
+      }
+    }
+  }
 }

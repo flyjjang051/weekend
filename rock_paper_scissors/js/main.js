@@ -6,15 +6,27 @@ console.log("🚀 ~ file: main.js ~ line 3 ~ humanItem", humanItem);
 
 let comChoiceNum = 0;
 const randomChoice = function () {
-  comItem[0].style.display = "none";
-  comItem[1].style.display = "none";
-  comItem[2].style.display = "none";
+  // comItem[0].style.display = "none";
+  // comItem[1].style.display = "none";
+  // comItem[2].style.display = "none";
+  for (let i = 0; i < 3; i++) {
+    comItem[i].style.display = "none";
+  }
   const selected = Math.floor(Math.random() * 3);
   comChoiceNum = selected;
   comItem[selected].style.display = "block";
 };
 
-const comChoiceStop = setInterval(randomChoice, 20); // clearInterval(clearId)
+//const comChoiceStop = setInterval(randomChoice, 20); // clearInterval(clearId)
+const num = 100;
+let comChoiceStop = null;
+function restart() {
+  comChoiceStop = setInterval(randomChoice, 20);
+}
+console.log(comChoiceStop);
+restart();
+
+//
 
 //randomChoice();
 
@@ -33,6 +45,7 @@ for (let i = 0; i < 3; i++) {
     } else {
       console.log("졌습니다.");
     }
+    setTimeout(restart, 1000);
   });
 }
 

@@ -17,3 +17,13 @@ body { font-family: "Poppins"; font-size: 16px; }
 #game #human ul li { margin: 0 10px; }
 
 #game #human ul li img { width: 100px; }
+
+#game #resultList { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin-top: 50px; }
+
+#game #resultList li { width: 50px; height: 50px; line-height: 50px; font-weight: 500; border-radius: 100%; margin: 0 10px; color: #fff; text-align: center; }
+
+#game #resultList li.win { background-color: #0452d0; }
+
+#game #resultList li.draw { background-color: #606060; }
+
+#game #resultList li.lose { background-color: #d10000; }
