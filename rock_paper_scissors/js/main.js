@@ -1,3 +1,4 @@
+//jquery
 console.log("hello javascript");
 const cover = document.querySelector("#cover");
 const btnReset = document.querySelector("#btnReset");
