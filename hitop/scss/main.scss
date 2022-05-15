@@ -1,7 +1,7 @@
 @import "vars";
 .container {
-  width: 1200px;
   margin: 0 auto;
+  width: 1200px;
 }
 /* common css */
 .section {
@@ -10,9 +10,9 @@
     margin-bottom: 60px;
     text-align: center;
     h2 {
-      margin-bottom: 10px;
       font-size: 40px;
       font-weight: 600;
+      margin-bottom: 10px;
     }
     p {
       line-height: 1.4;
@@ -21,7 +21,82 @@
 }
 #mainVisual {
   overflow: hidden;
-
+  .list {
+    li {
+      .img {
+        height: 100vh;
+        text-indent: -9999px;
+        background: {
+          position: 50%;
+          repeat: none;
+          size: cover;
+        }
+      }
+      &#visual01 .img {
+        background-image: url("../images/main/mainVisual01.jpg");
+      }
+      &#visual02 .img {
+        background-image: url("../images/main/mainVisual02.jpg");
+      }
+      &#visual03 .img {
+        background-image: url("../images/main/mainVisual03.jpg");
+      }
+    }
+  }
+  .slogan {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    .main {
+      font-size: 52px;
+      margin-bottom: 50px;
+      //color: $main-color;
+      //@include longShadow(darken($main-color, 10), right, 100);
+    }
+    .sub {
+      font-size: 24px;
+      line-height: 1.25;
+    }
+  }
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    &.btnPrev {
+      left: 50px;
+    }
+    &.btnNext {
+      right: 50px;
+    }
+  }
+  .pagination {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    bottom: 150px;
+    display: flex;
+    justify-content: center;
+    .swiper-pagination-bullet {
+      opacity: 1;
+      background-color: transparent;
+      border: 2px solid #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 100px;
+      transition: all 0.25s ease-in-out;
+      &-active {
+        background-color: #fff;
+        width: 120px;
+      }
+    }
+  }
+  /*
   .list li .img {
     height: 100vh;
     text-indent: -9999px;
@@ -68,47 +143,49 @@
       line-height: 1.5;
     }
   }
+  */
   .iconScroll {
-    position: absolute;
     bottom: 30px;
-    left: 50%;
-    z-index: 5;
-    font-size: 16px;
     color: #fff;
+    font-size: 16px;
+    left: 50%;
     letter-spacing: 0.2em; /* 알파벳 글자하나의 크기를 1em(M)으로 보는 단위 */
+    position: absolute;
     transform: translateX(-50%);
     transition: all 0.25s ease;
+    z-index: 5;
     &:before {
-      content: "";
-      display: block;
-      width: 16px;
-      height: 30px;
-      margin: 0 auto 10px;
       border: 2px solid #fff;
       border-radius: 100px;
-    }
-    &:after {
       content: "";
       display: block;
-      width: 3px;
-      height: 5px;
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
+      height: 30px;
+      margin: 0 auto 10px;
+      width: 16px;
+    }
+    &:after {
       animation: scrollAni 0.3s ease infinite alternate;
       background-color: #fff;
       border-radius: 10px;
+      content: "";
+      display: block;
+      height: 5px;
+      left: 50%;
+      position: absolute;
+      top: 12px;
+      transform: translateX(-50%);
+      width: 3px;
     }
   }
 }
+
 #mainLink {
-  transition: all 0.5s ease;
   position: relative;
+  transition: all 0.5s ease;
   z-index: 3;
   .list li {
-    overflow: hidden;
     float: left;
+    overflow: hidden;
     position: relative;
     transition: all 0.5s ease;
     a {
@@ -119,29 +196,29 @@
         opacity: 1;
       }
       &:after {
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        bottom: 20px;
         content: "";
         display: block;
-        position: absolute;
         left: 20px;
+        opacity: 0;
+        position: absolute;
         right: 20px;
         top: 20px;
-        bottom: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        opacity: 0;
         transition: all 0.25s ease;
       }
     }
     .txt {
-      position: absolute;
       bottom: 40px;
-      left: 40px;
-      font-size: 18px;
       color: #fff;
+      font-size: 18px;
+      left: 40px;
+      position: absolute;
       text-align: left;
       .main {
-        margin-top: 20px;
         font-size: 40px;
         font-weight: 600;
+        margin-top: 20px;
       }
     }
     img {
@@ -162,8 +239,8 @@
   background: url("../images/main/bgBusiness.jpg") #ccc no-repeat 50% 50%;
   background-size: cover;
   .list li {
-    overflow: hidden;
     float: left;
+    overflow: hidden;
     position: relative;
     &:nth-child(2n + 1) {
       margin-right: 20px;
@@ -180,29 +257,29 @@
         transform: scale(1.2);
       }
       &:after {
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        bottom: 20px;
         content: "";
         display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        bottom: 20px;
         left: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
         opacity: 0;
+        position: absolute;
+        right: 20px;
+        top: 20px;
         transition: all 0.25s ease;
       }
       &:hover:after {
         opacity: 1;
       }
       .txt {
-        position: absolute;
         bottom: 40px;
-        left: 40px;
         color: #fff;
+        left: 40px;
+        position: absolute;
         .main {
-          margin-bottom: 20px;
           font-size: 24px;
           font-weight: 700;
+          margin-bottom: 20px;
         }
       }
     }
@@ -210,86 +287,86 @@
 }
 
 #news .list li {
-  width: 380px;
+  border: 1px solid #999;
+  box-sizing: border-box;
   float: left;
   margin-left: 30px;
-  border: 1px solid #999;
   transition: all 0.25s ease;
-  box-sizing: border-box;
+  width: 380px;
   &:nth-child(1) {
     margin-left: 0;
   }
   &:hover {
+    border-color: #bf0c14;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     transform: translateY(-15px);
-    border-color: #bf0c14;
   }
   .img {
     height: 300px;
     img {
-      width: 100%;
       height: 300px;
+      width: 100%;
     }
   }
   .txt {
     padding: 30px;
     .title {
-      overflow: hidden;
-      margin-bottom: 15px;
       font-size: 22px;
       font-weight: 500;
-      white-space: nowrap;
+      margin-bottom: 15px;
+      overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .desc {
-      @include multiEllipsis(1.5, 3);
       color: #999;
+      @include multiEllipsis(1.5, 3);
     }
     .date {
-      margin-top: 20px;
       color: #999;
+      margin-top: 20px;
     }
   }
 }
 #customer {
+  background-image: url("../images/main/bgCustomer.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   text-align: center;
-  background-image: url("../images/main/bgCustomer.jpg");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
   h2:after {
+    background-color: #fff;
     content: "";
     display: block;
-    width: 30px;
     height: 2px;
     margin: 20px auto;
-    background-color: #fff;
+    width: 30px;
   }
   .btnEstimate {
+    background-color: $main-color;
+    border-radius: 100px;
     display: inline-block;
-    padding: 20px 50px;
     font-size: 20px;
     font-weight: 500;
-    background-color: #bf0c14;
-    border-radius: 100px;
     overflow: hidden;
-    @include longShadow(darken(#bf0c14, 10), right, 50);
+    padding: 20px 50px;
+    @include longShadow(darken($main-color, 10), right, 40);
   }
 }
 
 #dots {
-  @include absCenter(v);
-  right: 120px;
   position: fixed;
+  right: 120px;
   z-index: 999;
+  @include absCenter(v);
   li {
-    width: 10px;
-    height: 10px;
     background-color: #d9d9d9;
-    transition: all 0.25s ease;
     border-radius: 100px;
+    height: 10px;
     margin: 15px 0;
+    transition: all 0.25s ease;
+    width: 10px;
     &.on {
       background-color: $main-color;
     }

@@ -30,4 +30,18 @@ let person = {
 const printThis = person.consoleThis;
 //printThis();
 
-new Swiper("#mainVisual");
+// 생성자 함수
+new Swiper("#mainVisual", {
+  loop: true,
+  speed: 1000,
+  initialSlide: 2,
+  effect: "slide", // cube,fade, card
+  navigation: {
+    nextEl: "#mainVisual .btnNext",
+    prevEl: "#mainVisual .btnPrev",
+  },
+  pagination: {
+    el: "#mainVisual .pagination .bullets",
+    type: "bullets",
+  },
+});
