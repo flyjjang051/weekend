@@ -77,6 +77,41 @@ new Swiper("#news .listBox", {
   mousewheel: true,
 });
 
-const txt = "my name is jjang \r\n age 10 \r\n fkjdkjsf";
-console.log(txt.split("\r\n").join(""));
+// const txt = "my name is jjang \r\n age 10 \r\n fkjdkjsf";
+// console.log(txt.split("\r\n").join(""));
 // 문자열 찢기
+
+/*
+gsap.from("#mainVisual .slogan .main .char", {
+  y: 100,
+  opacity: 0,
+  stagger: 0.05,
+  ease: "power4",
+  duration: 1,
+});
+gsap.from("#mainVisual .slogan .sub .char", {
+  x: 100,
+  opacity: 0,
+  stagger: 0.02,
+  ease: "power4",
+  duration: 1,
+});
+*/
+const mainVisualTL = gsap.timeline();
+//prettier-ignore
+mainVisualTL
+  .from("#mainVisual .slogan .main .char", {
+    y: 100,
+    opacity: 0,
+    stagger: 0.05,
+    ease: "power4",
+    duration: 1,
+    delay:1
+  })
+  .from("#mainVisual .slogan .sub .char", {
+    x: 100,
+    opacity: 0,
+    stagger: 0.02,
+    ease: "power4",
+    duration: 1,
+  });

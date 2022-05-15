@@ -55,9 +55,8 @@
     .main {
       font-size: 52px;
       margin-bottom: 50px;
-      span {
-        display: inline-block;
-      }
+      //overflow: hidden;
+      padding-bottom: 20px;
       //color: $main-color;
       //@include longShadow(darken($main-color, 10), right, 100);
     }

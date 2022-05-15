@@ -22,9 +22,7 @@
 
 #mainVisual .slogan { color: #fff; position: absolute; top: 50%; z-index: 2; text-align: center; width: 100%; -webkit-transform: translateY(-50%); transform: translateY(-50%); pointer-events: none; }
 
-#mainVisual .slogan .main { font-size: 52px; margin-bottom: 50px; }
-
-#mainVisual .slogan .main span { display: inline-block; }
+#mainVisual .slogan .main { font-size: 52px; margin-bottom: 50px; padding-bottom: 20px; }
 
 #mainVisual .slogan .sub { font-size: 24px; line-height: 1.25; }
 
