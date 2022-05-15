@@ -24,6 +24,8 @@
 
 #mainVisual .slogan .main { font-size: 52px; margin-bottom: 50px; }
 
+#mainVisual .slogan .main span { display: inline-block; }
+
 #mainVisual .slogan .sub { font-size: 24px; line-height: 1.25; }
 
 #mainVisual > button { position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); z-index: 1; }
@@ -36,15 +38,15 @@
 
 #mainVisual .pagination .bullets { width: auto; }
 
-#mainVisual .pagination .swiper-pagination-bullet { opacity: 1; background-color: transparent; border: 2px solid #fff; width: 20px; height: 20px; border-radius: 100px; -webkit-transition: all 0.25s ease-in-out; transition: all 0.25s ease-in-out; }
+#mainVisual .pagination .swiper-pagination-bullet { opacity: 1; background-color: transparent; border: 2px solid #fff; width: 24px; height: 24px; border-radius: 100px; -webkit-transition: all 0.25s ease-in-out; transition: all 0.25s ease-in-out; }
 
 #mainVisual .pagination .swiper-pagination-bullet-active { background-color: #fff; width: 120px; }
 
-#mainVisual .pagination .autoBox .btn { width: 20px; height: 20px; border: 2px solid #fff; border-radius: 100px; -webkit-box-sizing: content-box; box-sizing: content-box; }
+#mainVisual .pagination .autoBox .btn { width: 24px; height: 24px; border: 2px solid #fff; border-radius: 100px; -webkit-box-sizing: content-box; box-sizing: content-box; }
 
 #mainVisual .pagination .autoBox .auto { display: none; }
 
-#mainVisual .pagination .autoBox .material-icons { color: #fff; font-size: 18px; vertical-align: top; }
+#mainVisual .pagination .autoBox span { color: #fff; font-size: 18px; vertical-align: top; text-indent: 1px; }
 
 #mainVisual .iconScroll { bottom: 30px; color: #fff; font-size: 16px; left: 50%; letter-spacing: 0.2em; /* 알파벳 글자하나의 크기를 1em(M)으로 보는 단위 */ position: absolute; -webkit-transform: translateX(-50%); transform: translateX(-50%); -webkit-transition: all 0.25s ease; transition: all 0.25s ease; z-index: 5; }
 
@@ -92,9 +94,9 @@
 
 #mainBusiness .list li a .txt .main { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
 
-#news .list li { border: 1px solid #999; -webkit-box-sizing: border-box; box-sizing: border-box; float: left; margin-left: 30px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; width: 380px; }
+#news { overflow: hidden; }
 
-#news .list li:nth-child(1) { margin-left: 0; }
+#news .list li { border: 1px solid #999; -webkit-box-sizing: border-box; box-sizing: border-box; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; width: 380px; }
 
 #news .list li:hover { border-color: #bf0c14; -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); -webkit-transform: translateY(-15px); transform: translateY(-15px); }
 

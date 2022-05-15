@@ -1,3 +1,5 @@
+Splitting();
+
 // > 바로 밑에 있는 자식만 선택
 const gnbList = $("#gnb .list > li");
 //const depth02 = $("#gnb .list > li .depth02");
@@ -9,11 +11,12 @@ gnbList.on("mouseenter", function () {
   // jquery에서 제공하는 api (즉 거의 대부분의 method)를 사용하기 위함이다.
   //   const depth02 = $(this).find(".depth02");
   //   depth02.slideDown(250);
-  $(this).find(".depth02").slideDown(250);
+  $(this).find(".depth02").stop().slideDown(250); // 제이쿼리에 사용되는 애니메이션은 queue 구조를 가진다.
   //메서드를 연결해서 쓰는 이러한 기법을 메서드 체이닝이라고 한다.
 });
+//queue  / stack
 gnbList.on("mouseleave", function () {
-  $(this).find(".depth02").slideUp(250);
+  $(this).find(".depth02").stop().slideUp(250);
 });
 // 자바스크립트에서 this는 누가 호출하느냐에 따라 결정된다.
 let person = {
@@ -43,9 +46,11 @@ const mainVisualSlider = new Swiper("#mainVisual", {
   pagination: {
     el: "#mainVisual .pagination .bullets",
     type: "bullets",
+    clickable: true,
   },
   autoplay: {
     delay: 3000,
+    disableOnInteraction: false,
   },
 });
 
@@ -63,3 +68,15 @@ btnAuto.on("click", function () {
   btnPause.css({ display: "block" });
   btnAuto.css({ display: "none" });
 });
+
+new Swiper("#news .listBox", {
+  slidesPerView: 3, // 화면에 보여지는 갯수
+  spaceBetween: 30, // margin-right
+  slidesPerGroup: 3, // swipe 한번에 지나가는 갯수
+  loop: true,
+  mousewheel: true,
+});
+
+const txt = "my name is jjang \r\n age 10 \r\n fkjdkjsf";
+console.log(txt.split("\r\n").join(""));
+// 문자열 찢기
