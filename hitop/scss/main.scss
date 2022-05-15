@@ -63,7 +63,7 @@
       line-height: 1.25;
     }
   }
-  button {
+  > button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -82,6 +82,9 @@
     bottom: 150px;
     display: flex;
     justify-content: center;
+    .bullets {
+      width: auto;
+    }
     .swiper-pagination-bullet {
       opacity: 1;
       background-color: transparent;
@@ -93,6 +96,23 @@
       &-active {
         background-color: #fff;
         width: 120px;
+      }
+    }
+    .autoBox {
+      .btn {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #fff;
+        border-radius: 100px;
+        box-sizing: content-box;
+      }
+      .auto {
+        display: none;
+      }
+      .material-icons {
+        color: #fff;
+        font-size: 18px;
+        vertical-align: top;
       }
     }
   }

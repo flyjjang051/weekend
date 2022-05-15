@@ -31,7 +31,7 @@ const printThis = person.consoleThis;
 //printThis();
 
 // 생성자 함수
-new Swiper("#mainVisual", {
+const mainVisualSlider = new Swiper("#mainVisual", {
   loop: true,
   speed: 1000,
   initialSlide: 2,
@@ -44,4 +44,22 @@ new Swiper("#mainVisual", {
     el: "#mainVisual .pagination .bullets",
     type: "bullets",
   },
+  autoplay: {
+    delay: 3000,
+  },
+});
+
+const btnPause = $("#mainVisual .autoBox .pause");
+const btnAuto = $("#mainVisual .autoBox .auto");
+
+btnPause.on("click", function () {
+  mainVisualSlider.autoplay.stop();
+  btnPause.css({ display: "none" });
+  btnAuto.css({ display: "block" });
+});
+
+btnAuto.on("click", function () {
+  mainVisualSlider.autoplay.start();
+  btnPause.css({ display: "block" });
+  btnAuto.css({ display: "none" });
 });

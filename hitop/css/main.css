@@ -26,17 +26,25 @@
 
 #mainVisual .slogan .sub { font-size: 24px; line-height: 1.25; }
 
-#mainVisual button { position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); z-index: 1; }
+#mainVisual > button { position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); z-index: 1; }
 
-#mainVisual button.btnPrev { left: 50px; }
+#mainVisual > button.btnPrev { left: 50px; }
 
-#mainVisual button.btnNext { right: 50px; }
+#mainVisual > button.btnNext { right: 50px; }
 
 #mainVisual .pagination { position: absolute; width: 100%; z-index: 3; bottom: 150px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+#mainVisual .pagination .bullets { width: auto; }
 
 #mainVisual .pagination .swiper-pagination-bullet { opacity: 1; background-color: transparent; border: 2px solid #fff; width: 20px; height: 20px; border-radius: 100px; -webkit-transition: all 0.25s ease-in-out; transition: all 0.25s ease-in-out; }
 
 #mainVisual .pagination .swiper-pagination-bullet-active { background-color: #fff; width: 120px; }
+
+#mainVisual .pagination .autoBox .btn { width: 20px; height: 20px; border: 2px solid #fff; border-radius: 100px; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+#mainVisual .pagination .autoBox .auto { display: none; }
+
+#mainVisual .pagination .autoBox .material-icons { color: #fff; font-size: 18px; vertical-align: top; }
 
 #mainVisual .iconScroll { bottom: 30px; color: #fff; font-size: 16px; left: 50%; letter-spacing: 0.2em; /* 알파벳 글자하나의 크기를 1em(M)으로 보는 단위 */ position: absolute; -webkit-transform: translateX(-50%); transform: translateX(-50%); -webkit-transition: all 0.25s ease; transition: all 0.25s ease; z-index: 5; }
 
