@@ -51,16 +51,41 @@
       const search = $("#search");
       const btnSearch = $(".searchForm .btn");
 
+      search.on("keyup", function (e) {
+        console.log(e);
+        if (e.keyCode === 13) {
+          const searchImag = search.val();
+          resultList.html("");
+          $.ajax({
+            url: `https://dapi.kakao.com/v2/search/image?query=${searchImag}&size=60`,
+            headers: {
+              Authorization: "KakaoAK 57b0bdcfc25c7176de1a11d4c5cf27c5",
+            },
+          }).done(function (data) {
+            const documents = data.documents;
+            let tempHtml = "";
+            $.each(documents, function (idx, item) {
+              tempHtml += `<li>
+            <a href="">
+                <img src="${item.thumbnail_url}" alt="">
+            </a>
+        </li>`;
+            });
+            resultList.append(tempHtml);
+          });
+        }
+      });
+
       btnSearch.on("click", function () {
         console.log(search.val());
         const searchImag = search.val();
+        resultList.html("");
         $.ajax({
           url: `https://dapi.kakao.com/v2/search/image?query=${searchImag}&size=60`,
           headers: {
             Authorization: "KakaoAK 57b0bdcfc25c7176de1a11d4c5cf27c5",
           },
         }).done(function (data) {
-          //console.log(data.documents);
           const documents = data.documents;
           let tempHtml = "";
           $.each(documents, function (idx, item) {
@@ -69,16 +94,7 @@
                 <img src="${item.thumbnail_url}" alt="">
             </a>
         </li>`;
-            /*
-          resultList.append(`<li>
-            <a href="">
-                <img src="${item.thumbnail_url}" alt="">
-                <p>${item.display_sitename}</p>
-            </a>
-        </li>`);
-        */
           });
-          //console.log(tempHtml);
           resultList.append(tempHtml);
         });
       });
