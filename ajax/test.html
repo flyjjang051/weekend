@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <ul class="userList">
+      <!-- <li>
+        <h2>장성호</h2>
+        <div class="info">
+          <dl>
+            <dt>age</dt>
+            <dd>20</dd>
+          </dl>
+          <dl>
+            <dt>weight</dt>
+            <dd>90</dd>
+          </dl>
+          <dl>
+            <dt>nickname</dt>
+            <dd>쨩난다,뚱스,블라블라</dd>
+          </dl>
+        </div>
+      </li> -->
+    </ul>
+    <script>
+      const userListDom = $(".userList");
+      $.ajax({ url: "test02.json" })
+        .done(function (data) {
+          //console.log(data.nickname);
+          const userList = data.userList;
+          //console.log(userList);
+          $.each(userList, function (idx, item) {
+            userListDom.append(`
+            <li>
+                <h2>${item.name}</h2>
+                <div class="info">
+                <dl>
+                    <dt>age</dt>
+                    <dd>${item.age}</dd>
+                </dl>
+                <dl>
+                    <dt>weight</dt>
+                    <dd>${item.weight}</dd>
+                </dl>
+                <dl>
+                    <dt>nickname</dt>
+                    <dd>${item.nickname.join("/")}</dd>
+                </dl>
+                </div>
+            </li>
+          `);
+          });
+
+          //vanilla script
+          // nickname.forEach(function (item, idx) {
+          //   console.log(item);
+          // });
+        })
+        .fail(function () {
+          alert("로딩실패");
+        });
+    </script>
+  </body>
+</html>

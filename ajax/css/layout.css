@@ -1,0 +1,15 @@
+* { margin: 0; padding: 0; }
+
+ul, ol, li { list-style: none; }
+
+a { color: inherit; text-decoration: none; }
+
+.resultList { width: 1200px; margin: 100px auto; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.resultList li { -ms-flex-preferred-size: 100px; flex-basis: 100px; position: relative; }
+
+.resultList li:hover:before { -webkit-box-shadow: inset 0 0 0 4px red; box-shadow: inset 0 0 0 4px red; }
+
+.resultList li:before { content: ""; display: block; position: absolute; left: 0; top: 0; right: 0; bottom: 0; -webkit-box-shadow: inset 0 0 0 0 red; box-shadow: inset 0 0 0 0 red; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
+
+.resultList li img { width: 100%; vertical-align: top; }

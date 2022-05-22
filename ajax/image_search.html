@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/layout.css" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="searchForm">
+      <input type="text" placeholder="search image..." id="search" />
+      <button class="btn"><span class="material-icons"> search </span></button>
+    </div>
+    <ul class="resultList">
+      <!-- <li>
+            <a href="">
+                <img src="kfkdls.jpg" alt="">
+                <p>한국경제 TV</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="kfkdls.jpg" alt="">
+                <p>한국경제 TV</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="kfkdls.jpg" alt="">
+                <p>한국경제 TV</p>
+            </a>
+        </li> -->
+    </ul>
+    <script>
+      const resultList = $(".resultList");
+
+      /*
+      const search = document.querySelector("#search");
+      const btnSearch = document.querySelector(".searchForm .btn");
+      btnSearch.addEventListener("click", function () {
+        console.log(search.value);
+      });
+      */
+
+      const search = $("#search");
+      const btnSearch = $(".searchForm .btn");
+
+      btnSearch.on("click", function () {
+        console.log(search.val());
+        const searchImag = search.val();
+        $.ajax({
+          url: `https://dapi.kakao.com/v2/search/image?query=${searchImag}&size=60`,
+          headers: {
+            Authorization: "KakaoAK 57b0bdcfc25c7176de1a11d4c5cf27c5",
+          },
+        }).done(function (data) {
+          //console.log(data.documents);
+          const documents = data.documents;
+          let tempHtml = "";
+          $.each(documents, function (idx, item) {
+            tempHtml += `<li>
+            <a href="">
+                <img src="${item.thumbnail_url}" alt="">
+            </a>
+        </li>`;
+            /*
+          resultList.append(`<li>
+            <a href="">
+                <img src="${item.thumbnail_url}" alt="">
+                <p>${item.display_sitename}</p>
+            </a>
+        </li>`);
+        */
+          });
+          //console.log(tempHtml);
+          resultList.append(tempHtml);
+        });
+      });
+    </script>
+  </body>
+</html>

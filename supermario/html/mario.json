@@ -1,0 +1,29 @@
+{
+    "mario":[
+        {
+            "imgSrc":"../images/supermario01.png",
+            "title":"FLYING MARIO",
+            "desc":"날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 "
+        },
+        {
+            "imgSrc":"../images/supermario02.png",
+            "title":"CAT MARIO",
+            "desc":"날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 "
+        },
+        {
+            "imgSrc":"../images/supermario03.png",
+            "title":"FIREBALL MARIO",
+            "desc":"날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 "
+        },
+        {
+            "imgSrc":"../images/supermario04.png",
+            "title":"RUNNING MARIO",
+            "desc":"날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 "
+        },
+        {
+            "imgSrc":"../images/supermario05.png",
+            "title":"RACOON MARIO",
+            "desc":"날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 "
+        }
+    ]
+}

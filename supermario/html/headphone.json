@@ -1,0 +1,29 @@
+{
+    "mario":[
+        {
+            "imgSrc":"../images/headphone01.png",
+            "title":"FLYING headphone",
+            "desc":"날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 "
+        },
+        {
+            "imgSrc":"../images/headphone02.png",
+            "title":"CAT headphone",
+            "desc":"날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 "
+        },
+        {
+            "imgSrc":"../images/headphone03.png",
+            "title":"FIREBALL headphone",
+            "desc":"날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 "
+        },
+        {
+            "imgSrc":"../images/headphone04.png",
+            "title":"RUNNING headphone",
+            "desc":"날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 "
+        },
+        {
+            "imgSrc":"../images/headphone05.png",
+            "title":"RACOON headphone",
+            "desc":"날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 날아라 마리오 "
+        }
+    ]
+}
