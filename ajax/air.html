@@ -10,12 +10,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/fancybox.css" />
-    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/air.css" />
     <script src="js/fancybox.umd.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/axios.min.js"></script>
   </head>
   <body>
+    <div class="searchForm">
+      <input
+        type="text"
+        placeholder="미세먼지를 알고싶은 시도명을 쓰세요."
+        id="search"
+      />
+      <button class="btn"><span class="material-icons"> search </span></button>
+    </div>
     <ul class="resultList">
       <!-- <li>
         <h2>중랑구</h2>
@@ -35,22 +43,33 @@
         url:
           "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?" +
           "serviceKey=Wnus4QpirWGI56CfvzMWDIDHMRL%2FmEF%2FqTl9gwVNbRggLYTGPFIdwBy0L51B%2B27d5QRbLanNmIAxPwNvl7dKPA%3D%3D" +
+          "&numOfRows=100" +
           "&returnType=json&sidoName=서울",
       }).done(function (data) {
         //console.log(data.response.body.items);
         const result = data.response.body.items;
         let tempHtml = "";
+        let pm10Emoji = "";
         $.each(result, function (idx, item) {
+          if (item.pm10Value <= 15) {
+            pm10Emoji = "&#128515";
+          } else if (item.pm10Value > 15 && item.pm10Value <= 35) {
+            pm10Emoji = "&#128528";
+          } else if (item.pm10Value > 35 && item.pm10Value <= 75) {
+            pm10Emoji = "&#128552";
+          } else {
+            pm10Emoji = "&#128561";
+          }
           tempHtml += `
-            <li>
-              <h2>${item.stationName}</h2>
-              <dl>
-                <dt>미세먼지</dt>
-                <dd>${item.pm10Value}</dd>
-              </dl>
-              <p>${item.pm10Grade}</p>
-            </li>
-          `;
+                  <li>
+                    <h2>${item.stationName}</h2>
+                    <dl>
+                      <dt>미세먼지</dt>
+                      <dd>${item.pm10Value}</dd>
+                    </dl>
+                    <p class="icon">${pm10Emoji}</p>
+                  </li>
+                `;
         });
         resultList.append(tempHtml);
       });
