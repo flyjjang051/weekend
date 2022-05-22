@@ -16,15 +16,43 @@
     <script src="js/axios.min.js"></script>
   </head>
   <body>
-    <ul class="resultList"></ul>
+    <ul class="resultList">
+      <!-- <li>
+        <h2>중랑구</h2>
+        <dl>
+          <dt>미세먼지</dt>
+          <dd>1</dd>
+        </dl>
+        <dl>
+          <dt>초미세먼지</dt>
+          <dd>2</dd>
+        </dl>
+      </li> -->
+    </ul>
     <script>
+      const resultList = $(".resultList");
       $.ajax({
         url:
           "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?" +
           "serviceKey=Wnus4QpirWGI56CfvzMWDIDHMRL%2FmEF%2FqTl9gwVNbRggLYTGPFIdwBy0L51B%2B27d5QRbLanNmIAxPwNvl7dKPA%3D%3D" +
           "&returnType=json&sidoName=서울",
       }).done(function (data) {
-        console.log(data);
+        //console.log(data.response.body.items);
+        const result = data.response.body.items;
+        let tempHtml = "";
+        $.each(result, function (idx, item) {
+          tempHtml += `
+            <li>
+              <h2>${item.stationName}</h2>
+              <dl>
+                <dt>미세먼지</dt>
+                <dd>${item.pm10Value}</dd>
+              </dl>
+              <p>${item.pm10Grade}</p>
+            </li>
+          `;
+        });
+        resultList.append(tempHtml);
       });
     </script>
   </body>
