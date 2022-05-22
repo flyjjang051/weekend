@@ -39,40 +39,51 @@
     </ul>
     <script>
       const resultList = $(".resultList");
-      $.ajax({
-        url:
-          "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?" +
-          "serviceKey=Wnus4QpirWGI56CfvzMWDIDHMRL%2FmEF%2FqTl9gwVNbRggLYTGPFIdwBy0L51B%2B27d5QRbLanNmIAxPwNvl7dKPA%3D%3D" +
-          "&numOfRows=100" +
-          "&returnType=json&sidoName=서울",
-      }).done(function (data) {
-        //console.log(data.response.body.items);
-        const result = data.response.body.items;
-        let tempHtml = "";
-        let pm10Emoji = "";
-        $.each(result, function (idx, item) {
-          if (item.pm10Value <= 15) {
-            pm10Emoji = "&#128515";
-          } else if (item.pm10Value > 15 && item.pm10Value <= 35) {
-            pm10Emoji = "&#128528";
-          } else if (item.pm10Value > 35 && item.pm10Value <= 75) {
-            pm10Emoji = "&#128552";
-          } else {
-            pm10Emoji = "&#128561";
-          }
-          tempHtml += `
-                  <li>
-                    <h2>${item.stationName}</h2>
-                    <dl>
-                      <dt>미세먼지</dt>
-                      <dd>${item.pm10Value}</dd>
-                    </dl>
-                    <p class="icon">${pm10Emoji}</p>
-                  </li>
-                `;
-        });
-        resultList.append(tempHtml);
+      const btn = $(".searchForm .btn");
+      const search = $("#search");
+      btn.on("click", function () {
+        loadAirData();
       });
+      search.on("keyup", function (e) {
+        if (e.keyCode === 13) {
+          loadAirData();
+        }
+      });
+      function loadAirData() {
+        const sido = search.val();
+        console.log(sido);
+        resultList.html("");
+        $.ajax({
+          url: `http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?serviceKey=Wnus4QpirWGI56CfvzMWDIDHMRL%2FmEF%2FqTl9gwVNbRggLYTGPFIdwBy0L51B%2B27d5QRbLanNmIAxPwNvl7dKPA%3D%3D&numOfRows=100&returnType=json&sidoName=${sido}`,
+        }).done(function (data) {
+          //console.log(data.response.body.items);
+          const result = data.response.body.items;
+          let tempHtml = "";
+          let pm10Emoji = "";
+          $.each(result, function (idx, item) {
+            if (item.pm10Value <= 15) {
+              pm10Emoji = "&#128515";
+            } else if (item.pm10Value > 15 && item.pm10Value <= 35) {
+              pm10Emoji = "&#128528";
+            } else if (item.pm10Value > 35 && item.pm10Value <= 75) {
+              pm10Emoji = "&#128552";
+            } else {
+              pm10Emoji = "&#128561";
+            }
+            tempHtml += `
+                    <li>
+                      <h2>${item.stationName}</h2>
+                      <dl>
+                        <dt>미세먼지</dt>
+                        <dd>${item.pm10Value}</dd>
+                      </dl>
+                      <p class="icon">${pm10Emoji}</p>
+                    </li>
+                  `;
+          });
+          resultList.append(tempHtml);
+        });
+      }
     </script>
   </body>
 </html>
