@@ -68,7 +68,7 @@
         const searchImag = search.val();
         resultList.html("");
         $.ajax({
-          url: `https://dapi.kakao.com/v2/search/image?query=${searchImag}&size=60`,
+          url: `https://dapi.kakao.com/v2/search/vclip?query=${searchImag}&size=30`,
           headers: {
             Authorization: "KakaoAK 57b0bdcfc25c7176de1a11d4c5cf27c5",
           },
@@ -77,8 +77,8 @@
           let tempHtml = "";
           $.each(documents, function (idx, item) {
             tempHtml += `<li>
-            <a href="${item.image_url}" data-fancybox="gallery" data-caption="${item.display_sitename}">
-                <img src="${item.thumbnail_url}" alt="">
+            <a href="${item.url}" data-fancybox="gallery" data-caption="${item.title}">
+                <img src="${item.thumbnail}" alt="">
             </a>
         </li>`;
           });
