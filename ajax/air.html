@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/fancybox.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/axios.min.js"></script>
+  </head>
+  <body>
+    <ul class="resultList"></ul>
+    <script>
+      $.ajax({
+        url:
+          "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?" +
+          "serviceKey=Wnus4QpirWGI56CfvzMWDIDHMRL%2FmEF%2FqTl9gwVNbRggLYTGPFIdwBy0L51B%2B27d5QRbLanNmIAxPwNvl7dKPA%3D%3D" +
+          "&returnType=json&sidoName=서울",
+      }).done(function (data) {
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>
