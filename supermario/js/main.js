@@ -1,7 +1,11 @@
+const zDistance = 5000;
+const step = 20;
+const zSpeed = zDistance / step;
 $.ajax({ url: "../data/mario.json" }).done(function (data) {
   console.log(data.mario);
   const marioList = [...data.mario];
   let tempHtml = "";
+  const total = marioList.length;
   $.each(marioList, function (idx, item) {
     tempHtml += `<li>
       <div class="mario">
@@ -19,7 +23,7 @@ $.ajax({ url: "../data/mario.json" }).done(function (data) {
 
   $(".marioList li").each(function (idx, item) {
     $(this).css({
-      transform: `translateZ(${-5000 * idx}px)`,
+      transform: `translateZ(${-zDistance * idx}px)`,
       zIndex: 99 - idx,
     });
   });
@@ -28,17 +32,20 @@ $.ajax({ url: "../data/mario.json" }).done(function (data) {
     console.log(e.originalEvent.deltaY);
     const wheel = e.originalEvent.deltaY;
     if (wheel > 0) {
-      zAmount += 100;
+      //zAmount는 0보다 작을때만 동작 해야 한다.
+      if (zAmount >= zDistance * (total - 1)) return;
+      zAmount += zSpeed;
       $(".marioList li").each(function (idx, item) {
         $(this).css({
-          transform: `translateZ(${-5000 * idx + zAmount}px)`,
+          transform: `translateZ(${-zDistance * idx + zAmount}px)`,
         });
       });
     } else {
-      zAmount -= 100;
+      if (zAmount < 0) return;
+      zAmount -= zSpeed;
       $(".marioList li").each(function (idx, item) {
         $(this).css({
-          transform: `translateZ(${-5000 * idx + zAmount}px)`,
+          transform: `translateZ(${-zDistance * idx + zAmount}px)`,
         });
       });
     }
