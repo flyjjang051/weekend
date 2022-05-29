@@ -16,6 +16,34 @@ $.ajax({ url: "../data/mario.json" }).done(function (data) {
     </li>`;
   });
   $(".marioList").append(tempHtml);
+
+  $(".marioList li").each(function (idx, item) {
+    $(this).css({
+      transform: `translateZ(${-5000 * idx}px)`,
+      zIndex: 99 - idx,
+    });
+  });
+  let zAmount = 0;
+  $(".marioList").on("mousewheel", function (e) {
+    console.log(e.originalEvent.deltaY);
+    const wheel = e.originalEvent.deltaY;
+    if (wheel > 0) {
+      zAmount += 100;
+      $(".marioList li").each(function (idx, item) {
+        $(this).css({
+          transform: `translateZ(${-5000 * idx + zAmount}px)`,
+        });
+      });
+    } else {
+      zAmount -= 100;
+      $(".marioList li").each(function (idx, item) {
+        $(this).css({
+          transform: `translateZ(${-5000 * idx + zAmount}px)`,
+        });
+      });
+    }
+  });
+
   // marioList.push("뒤에서 밀어넣고 있습니다.");
   // console.log("🚀 ~ file: main.js ~ line 5 ~ marioList", marioList);
   // console.log("🚀 ~ file: main.js ~ line 3 ~ data.mario", data.mario);
