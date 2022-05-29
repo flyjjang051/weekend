@@ -62,6 +62,7 @@
           let tempHtml = "";
           let pm10Emoji = "";
           $.each(result, function (idx, item) {
+            console.log(idx);
             if (item.pm10Value <= 15) {
               pm10Emoji = "&#128515";
             } else if (item.pm10Value > 15 && item.pm10Value <= 35) {

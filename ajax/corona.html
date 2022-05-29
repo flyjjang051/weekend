@@ -13,18 +13,58 @@
     <script src="js/fancybox.umd.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/axios.min.js"></script>
+    <script src="js/chart.min.js"></script>
+    <style>
+      #coronaChart {
+        width: 1200px;
+        height: 600px;
+        margin: 100px auto;
+      }
+    </style>
   </head>
   <body>
-    <ul class="resultList"></ul>
+    <!-- <ul class="resultList"></ul> -->
+    <canvas id="coronaChart"></canvas>
     <script>
+      const labels = ["검역", "서울", "부산", "대구", "인천", "제주"];
+
+      const data = {
+        labels: labels,
+        datasets: [
+          {
+            label: "corona",
+            backgroundColor: "rgb(255, 0, 0)",
+            borderColor: "rgb(255, 99, 132)",
+            data: [5, 2200, 1200, 980, 1450, 100],
+          },
+        ],
+      };
+
+      const config = {
+        type: "bar",
+        data: data,
+        options: {},
+      };
+
+      const myChart = new Chart(document.getElementById("coronaChart"), config);
+
       $.ajax({
         url:
           "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson" +
           "?ServiceKey=Wnus4QpirWGI56CfvzMWDIDHMRL%2FmEF%2FqTl9gwVNbRggLYTGPFIdwBy0L51B%2B27d5QRbLanNmIAxPwNvl7dKPA%3D%3D" +
           "&startCreateDt=20220528" +
-          "&endCreateDt=20220528",
+          "&endCreateDt=20220528" +
+          "&_type=json",
       }).done(function (data) {
-        console.log(data);
+        const coronaData = data.response.body.items.item;
+        console.log(coronaData);
+        console.log(Array.isArray(coronaData));
+        let tempHtml = "";
+        $.each(coronaData, function (idx, item) {
+          tempHtml += `<li>${item.gubun}:${item.localOccCnt}</li>`;
+        });
+        console.log(tempHtml);
+        $(".resultList").append(tempHtml);
       });
     </script>
   </body>
