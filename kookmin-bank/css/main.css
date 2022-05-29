@@ -7,3 +7,5 @@
 #banner .list > li .title h2 { font-size: 32px; margin-bottom: 10px; }
 
 #banner .list > li .title p { line-height: 1.5; }
+
+#banner .list > li .more { position: absolute; right: 30px; bottom: 30px; font-size: 48px; }

@@ -11,7 +11,7 @@
       padding: 30px;
       color: #fff;
       border-left: 1px solid darken(rgb(227, 152, 1), 10);
-      width: 33.33%;,,"
+      width: 33.33%;
       position: relative;
       .title {
         h2 {
@@ -21,6 +21,12 @@
         p {
           line-height: 1.5;
         }
+      }
+      .more {
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+        font-size: 48px;
       }
     }
   }
