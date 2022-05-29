@@ -1,10 +1,11 @@
 #banner {
   width: 1200px;
+  margin: 100px auto;
   .list {
-    display: table;
+    display: flex;
     width: 100%;
     > li {
-      display: table-cell;
+      flex-basis: 33.33%;
       height: 300px;
       background-color: rgb(227, 152, 1);
       box-sizing: border-box;
@@ -13,6 +14,18 @@
       border-left: 1px solid darken(rgb(227, 152, 1), 10);
       width: 33.33%;
       position: relative;
+      transition: all 0.5s ease;
+      &.active {
+        flex-basis: 80%;
+        .more {
+          opacity: 0;
+          pointer-events: none;
+        }
+        .close {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
       .title {
         h2 {
           font-size: 32px;
@@ -24,9 +37,23 @@
       }
       .more {
         position: absolute;
-        right: 30px;
-        bottom: 30px;
-        font-size: 48px;
+        right: 20px;
+        bottom: 20px;
+        transition: all 0.5s ease;
+        .material-icons {
+          font-size: 36px;
+        }
+      }
+      .close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        transition: all 0.5s ease;
+        opacity: 0;
+        pointer-events: none;
+        .material-icons {
+          font-size: 36px;
+        }
       }
     }
   }

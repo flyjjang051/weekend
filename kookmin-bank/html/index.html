@@ -44,14 +44,20 @@
             <h2>펀드</h2>
             <p>펀드포트폴리오 가입</p>
           </div>
-          <a href="" class="more">+</a>
+          <a href="" class="more"><span class="material-icons"> add </span></a>
+          <a href="" class="close"
+            ><span class="material-icons"> close </span></a
+          >
         </li>
         <li>
           <div class="title">
             <h2>퇴직연금</h2>
             <p>IRP 신규가입 <br />DC/IRP 상품변경</p>
           </div>
-          <a href="" class="more">+</a>
+          <a href="" class="more"><span class="material-icons"> add </span></a>
+          <a href="" class="close"
+            ><span class="material-icons"> close </span></a
+          >
         </li>
         <li>
           <div class="title">
@@ -61,10 +67,27 @@
               KB골든라이프 자계좌변경
             </p>
           </div>
-          <a href="" class="more">+</a>
+          <a href="" class="more"><span class="material-icons"> add </span></a>
+          <a href="" class="close"
+            ><span class="material-icons"> close </span></a
+          >
         </li>
       </ul>
     </div>
+    <script>
+      $("#banner .list li .more").on("click", function (e) {
+        e.preventDefault();
+        $(this).parent().addClass("active");
+        $(this).parent().siblings().removeClass("active");
+        //return false;
+      });
+      $("#banner .list li .close").on("click", function (e) {
+        e.preventDefault();
+        $(this).parent().removeClass("active");
+        $(this).parent().siblings().removeClass("active");
+        //return false;
+      });
+    </script>
   </body>
 </html>
 

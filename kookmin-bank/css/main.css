@@ -1,11 +1,23 @@
-#banner { width: 1200px; }
+#banner { width: 1200px; margin: 100px auto; }
 
-#banner .list { display: table; width: 100%; }
+#banner .list { display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; }
 
-#banner .list > li { display: table-cell; height: 300px; background-color: #e39801; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 30px; color: #fff; border-left: 1px solid #b07601; width: 33.33%; position: relative; }
+#banner .list > li { -ms-flex-preferred-size: 33.33%; flex-basis: 33.33%; height: 300px; background-color: #e39801; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 30px; color: #fff; border-left: 1px solid #b07601; width: 33.33%; position: relative; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; }
+
+#banner .list > li.active { -ms-flex-preferred-size: 80%; flex-basis: 80%; }
+
+#banner .list > li.active .more { opacity: 0; pointer-events: none; }
+
+#banner .list > li.active .close { opacity: 1; pointer-events: auto; }
 
 #banner .list > li .title h2 { font-size: 32px; margin-bottom: 10px; }
 
 #banner .list > li .title p { line-height: 1.5; }
 
-#banner .list > li .more { position: absolute; right: 30px; bottom: 30px; font-size: 48px; }
+#banner .list > li .more { position: absolute; right: 20px; bottom: 20px; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; }
+
+#banner .list > li .more .material-icons { font-size: 36px; }
+
+#banner .list > li .close { position: absolute; right: 20px; top: 20px; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; opacity: 0; pointer-events: none; }
+
+#banner .list > li .close .material-icons { font-size: 36px; }
