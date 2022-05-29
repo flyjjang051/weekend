@@ -31,6 +31,7 @@
     <div><input type="text" id="datePicker" /></div>
     <canvas id="coronaChart"></canvas>
     <script>
+      console.log(moment().format("YYYYMMDD"));
       const picker = new Lightpick({
         field: document.getElementById("datePicker"),
         onSelect: function (date) {
@@ -40,7 +41,7 @@
       });
 
       let myChart = null;
-      loadCorona(20220528);
+      loadCorona(moment().format("YYYYMMDD"));
       function loadCorona(date) {
         console.log(date);
         $.ajax({
