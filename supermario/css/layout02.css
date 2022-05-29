@@ -16,11 +16,11 @@ body { font-family: "Montserrat", "Noto Sans KR"; font-size: 1.6rem; background-
 
 #main { width: 100vw; height: 100vh; background: url("../images/bg02.jpg") no-repeat 50%; background-size: cover; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; overflow: hidden; }
 
-#main .marioList { position: relative; }
+#main .marioList { position: relative; height: auto; }
 
-#main .marioList li { width: 1000px; height: 500px; }
+#main .marioList li { width: 800px; height: 500px; }
 
-#main .marioList li .bg { width: 1000px; height: 100%; background-color: #fff; border-radius: 40px; }
+#main .marioList li .bg { width: 100%; height: 100%; background-color: #fff; border-radius: 40px; }
 
 #main .marioList li .mario { position: absolute; z-index: 5; left: -100px; -webkit-filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.2)); filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.2)); }
 

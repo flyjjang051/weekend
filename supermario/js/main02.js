@@ -21,13 +21,14 @@ $.ajax({ url: "../data/mario.json" }).done(function (data) {
   });
   $(".marioList").append(tempHtml);
   new Swiper("#main", {
-    slidesPerView: 3,
+    slidesPerView: "auto",
     effect: "coverflow",
     loop: true,
     coverflowEffect: {
       rotate: 0,
       slideShadows: false,
       depth: 500,
+      stretch: 0,
     },
     mousewheel: true,
   });

@@ -1,0 +1,7 @@
+.box { width: 100px; height: 100px; margin-bottom: 20px; position: relative; }
+
+.box#red { background-color: #f00; }
+
+.box#green { background-color: #0f0; }
+
+.box#blue { background-color: #00f; }
