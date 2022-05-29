@@ -9,11 +9,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="css/fancybox.css" />
     <link rel="stylesheet" href="css/air.css" />
+    <link rel="stylesheet" href="css/lightpick.css" />
     <script src="js/greensock/gsap.min.js"></script>
     <script src="js/fancybox.umd.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/axios.min.js"></script>
     <script src="js/chart.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/lightpick.js"></script>
     <style>
       #coronaChart {
         width: 1200px;
@@ -25,69 +28,84 @@
   <body>
     .
     <!-- <ul class="resultList"></ul> -->
+    <div><input type="text" id="datePicker" /></div>
     <canvas id="coronaChart"></canvas>
     <script>
-      const labels = [];
-
-      const data = {
-        labels: labels,
-        datasets: [
-          {
-            type: "line",
-            label: "corona",
-            backgroundColor: [],
-            borderColor: "rgb(0,0,0)",
-            data: [],
-          },
-          {
-            type: "bar",
-            label: "corona",
-            backgroundColor: [],
-            borderColor: "rgb(0,0,0)",
-            data: [],
-          },
-        ],
-      };
-
-      $.ajax({
-        url:
-          "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson" +
-          "?ServiceKey=Wnus4QpirWGI56CfvzMWDIDHMRL%2FmEF%2FqTl9gwVNbRggLYTGPFIdwBy0L51B%2B27d5QRbLanNmIAxPwNvl7dKPA%3D%3D" +
-          "&startCreateDt=20220528" +
-          "&endCreateDt=20220528" +
-          "&_type=json",
-      }).done(function (res) {
-        const coronaData = res.response.body.items.item;
-        console.log(coronaData);
-        console.log(Array.isArray(coronaData));
-        let tempHtml = "";
-        $.each(coronaData, function (idx, item) {
-          labels.push(item.gubun);
-          data.datasets[0].data.push(item.localOccCnt);
-          data.datasets[1].data.push(item.localOccCnt);
-          // prettier-ignore
-          data.datasets[0].backgroundColor.push(
-            `rgb(
-              ${Math.floor(Math.random() * 256)},
-              ${Math.floor(Math.random() * 256)},
-              ${Math.floor(Math.random() * 256)})`
-          );
-          data.datasets[1].backgroundColor.push(
-            `rgb(
-              ${Math.floor(Math.random() * 256)},
-              ${Math.floor(Math.random() * 256)},
-              ${Math.floor(Math.random() * 256)})`
-          );
-        });
-        const config = {
-          data: data,
-          options: {},
-        };
-        const myChart = new Chart(
-          document.getElementById("coronaChart"),
-          config
-        );
+      const picker = new Lightpick({
+        field: document.getElementById("datePicker"),
+        onSelect: function (date) {
+          document.getElementById("datePicker").value = date.format("YYYYMMDD");
+          loadCorona(date.format("YYYYMMDD"));
+        },
       });
+
+      let myChart = null;
+      loadCorona(20220528);
+      function loadCorona(date) {
+        console.log(date);
+        $.ajax({
+          url: `http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?ServiceKey=Wnus4QpirWGI56CfvzMWDIDHMRL%2FmEF%2FqTl9gwVNbRggLYTGPFIdwBy0L51B%2B27d5QRbLanNmIAxPwNvl7dKPA%3D%3D&startCreateDt=${date}&endCreateDt=${date}&_type=json`,
+        }).done(function (res) {
+          const coronaData = res.response.body.items.item;
+          let tempHtml = "";
+          if (myChart !== null) {
+            myChart.destroy();
+          }
+          const labels = [];
+          const data = {
+            labels: labels,
+            datasets: [
+              {
+                type: "line",
+                label: "corona",
+                backgroundColor: [],
+                borderColor: "rgb(0,0,0)",
+                data: [],
+              },
+              {
+                type: "bar",
+                label: "corona",
+                backgroundColor: [],
+                borderColor: "rgb(0,0,0)",
+                data: [],
+              },
+            ],
+          };
+          const config = {
+            data: data,
+            options: {},
+          };
+
+          $.each(coronaData, function (idx, item) {
+            console.log(item);
+            if (item.gubun !== "합계") {
+              labels.push(item.gubun);
+              if (item.gubun !== "검역") {
+                data.datasets[0].data.push(item.localOccCnt);
+                data.datasets[1].data.push(item.localOccCnt);
+              } else {
+                data.datasets[0].data.push(item.overFlowCnt);
+                data.datasets[1].data.push(item.overFlowCnt);
+              }
+              // prettier-ignore
+              data.datasets[0].backgroundColor.push(
+            `rgb(
+              ${Math.floor(Math.random() * 256)},
+              ${Math.floor(Math.random() * 256)},
+              ${Math.floor(Math.random() * 256)})`
+            );
+              data.datasets[1].backgroundColor.push(
+                `rgb(
+              ${Math.floor(Math.random() * 256)},
+              ${Math.floor(Math.random() * 256)},
+              ${Math.floor(Math.random() * 256)})`
+              );
+            }
+          });
+
+          myChart = new Chart(document.getElementById("coronaChart"), config);
+        });
+      }
     </script>
   </body>
 </html>
