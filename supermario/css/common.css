@@ -1,20 +1,48 @@
-.hidden {
-    width:1px;
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    left:-9999px;
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+
+#skip {
+    display: none;
 }
-.ol {
-    outline: 1px solid #f00;
-}
-.clearFix:after , .fList:after  {
-    content: '';
-    display:block;
-    clear: both;
-}
-.center {
-    text-align: center;
+.floatList > * {
+    float: left;
 }
 
-.fList > li {float: left;}
+.inlineList {
+    font-size: 0;
+}
+.inlineList > * {
+    display: inline-block;
+    font-size: 16px;
+}
+.clearFix:after, .floatList:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.hidden {
+    display: none;
+}
