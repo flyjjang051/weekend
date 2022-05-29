@@ -8,7 +8,7 @@
 
 #banner .list > li.active .more { opacity: 0; pointer-events: none; }
 
-#banner .list > li.active .close { opacity: 1; pointer-events: auto; }
+#banner .list > li.active .close, #banner .list > li.active .contents { opacity: 1; pointer-events: auto; }
 
 #banner .list > li .title h2 { font-size: 32px; margin-bottom: 10px; }
 
@@ -21,3 +21,11 @@
 #banner .list > li .close { position: absolute; right: 20px; top: 20px; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; opacity: 0; pointer-events: none; }
 
 #banner .list > li .close .material-icons { font-size: 36px; }
+
+#banner .list > li .contents { position: absolute; right: 70px; top: 25px; opacity: 0; pointer-events: none; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; }
+
+#banner .list > li .contents li { border-bottom: 1px solid #fff; }
+
+#banner .list > li .contents li a { display: block; padding: 10px 10px; }
+
+#banner .list > li .contents > a { display: block; padding: 20px; background-color: #fff; color: #e39801; margin-top: 20px; }

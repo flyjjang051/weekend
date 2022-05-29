@@ -21,7 +21,8 @@
           opacity: 0;
           pointer-events: none;
         }
-        .close {
+        .close,
+        .contents {
           opacity: 1;
           pointer-events: auto;
         }
@@ -53,6 +54,28 @@
         pointer-events: none;
         .material-icons {
           font-size: 36px;
+        }
+      }
+      .contents {
+        position: absolute;
+        right: 70px;
+        top: 25px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.5s ease;
+        li {
+          border-bottom: 1px solid #fff;
+          a {
+            display: block;
+            padding: 10px 10px;
+          }
+        }
+        > a {
+          display: block;
+          padding: 20px;
+          background-color: #fff;
+          color: rgb(227, 152, 1);
+          margin-top: 20px;
         }
       }
     }
