@@ -180,18 +180,18 @@ communityTL
     "-=1"
   );
 new fullpage("#main", {
-  // cards: true,
-  // cardsOptions: { perspective: 100, fadeContent: true, fadeBackground: true },
-  onLeave: function (origin, destination, direction, trigger) {
-    //console.log("leave===", origin, "===", destination);
-  },
-  onLeave: function (origin, destination, direction, trigger) {
-    //console.log("afterLoad===", origin, "===", destination);
-    //console.log(destination.index);
+  navigation: true,
+  navigationPosition: "right",
+  navigationTooltips: [
+    "WE WILL MAKE IT HAPPEN",
+    "BUSINESS",
+    "PORTFOLIO",
+    "COMMUNITY",
+    "INFORMATION",
+  ],
+  showActiveTooltip: true,
 
-    // if (destination.index === 1) {
-    //   businessTL.restart();
-    // }
+  onLeave: function (origin, destination, direction, trigger) {
     switch (destination.index) {
       case 0:
         mainVisualTL.restart();
@@ -203,7 +203,7 @@ new fullpage("#main", {
         portfolioTL.restart();
         break;
       case 3:
-        communityTL.restart();
+        direction === "down" ? communityTL.restart() : null;
         break;
     }
   },
