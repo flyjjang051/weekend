@@ -18,6 +18,12 @@
 
 .h4:before { content: ""; display: block; width: 4px; height: 30px; position: absolute; top: 50%; left: 0; background: #bf0c14; background: -webkit-gradient(linear, left top, left bottom, from(#bf0c14), color-stop(50%, #bf0c14), color-stop(50%, #d9d9d9), to(#d9d9d9)); background: linear-gradient(180deg, #bf0c14 0%, #bf0c14 50%, #d9d9d9 50%, #d9d9d9 100%); -webkit-transform: translateY(-50%); transform: translateY(-50%); }
 
+.tab.on .menu { width: 1200px; position: fixed; top: 120px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); z-index: 2; }
+
+.tab.on .contents { margin-top: 210px !important; }
+
+.tab .menu { background-color: #fff; }
+
 .tab .menu ul li { height: 60px; margin-left: -1px; text-align: center; line-height: 60px; border: 1px solid #d9d9d9; -webkit-box-sizing: border-box; box-sizing: border-box; cursor: pointer; }
 
 .tab .menu ul li.on { color: #fff; background-color: #bf0c14; border-color: #bf0c14; }
@@ -220,7 +226,7 @@
 
 #location .map { width: 100%; height: 500px; }
 
-#location .tab .contents { margin-top: 50px; position: relative; }
+#location .tab .contents { margin-top: 100px; position: relative; }
 
 #location .info { margin-top: 50px; }
 

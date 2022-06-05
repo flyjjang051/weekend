@@ -1,23 +1,5 @@
 Splitting();
 
-// > 바로 밑에 있는 자식만 선택
-const gnbList = $("#gnb .list > li");
-//const depth02 = $("#gnb .list > li .depth02");
-//console.log(depth02);
-gnbList.on("mouseenter", function () {
-  //console.log(this);
-  // 선택자를 $(선택자) 쓰는거를 래핑(wrapping)한다고 한다.
-  // 이렇게 하는 이유는
-  // jquery에서 제공하는 api (즉 거의 대부분의 method)를 사용하기 위함이다.
-  //   const depth02 = $(this).find(".depth02");
-  //   depth02.slideDown(250);
-  $(this).find(".depth02").stop().slideDown(250); // 제이쿼리에 사용되는 애니메이션은 queue 구조를 가진다.
-  //메서드를 연결해서 쓰는 이러한 기법을 메서드 체이닝이라고 한다.
-});
-//queue  / stack
-gnbList.on("mouseleave", function () {
-  $(this).find(".depth02").stop().slideUp(250);
-});
 // 자바스크립트에서 this는 누가 호출하느냐에 따라 결정된다.
 let person = {
   name: "장성호",
@@ -117,16 +99,3 @@ mainVisualTL
   });
 // script  브라우져 환경에 최상위 객체는 window
 // state(상태)에 의한 변경이 이루어질때는 한곳에 쓰는게 좋다.
-$(window).on("scroll", function (e) {
-  //console.log($(window).scrollTop());
-  const st = $(window).scrollTop();
-  if (st > 100) {
-    //$(".btnTop").addClass("on");
-    //$("#header").addClass("on");
-    $("body").addClass("on");
-  } else {
-    //$(".btnTop").removeClass("on");
-    //$("#header").removeClass("on");
-    $("body").removeClass("on");
-  }
-});
