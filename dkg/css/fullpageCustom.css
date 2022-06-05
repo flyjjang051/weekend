@@ -145,7 +145,7 @@ body.last #fp-nav.fp-right {
 }
 #fp-nav ul li a ~ .fp-tooltip {
   opacity: 0.5;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 }
 #fp-nav ul li a:after {
   content: "";
@@ -158,7 +158,7 @@ body.last #fp-nav.fp-right {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(0);
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 }
 #fp-nav ul li a.active:after {
   transform: translate(-50%, -50%) scale(1);
@@ -206,6 +206,7 @@ body.last #fp-nav.fp-right {
   opacity: 1;
   width: auto;
   cursor: pointer;
+  display: none;
 }
 #fp-nav ul li:hover .fp-tooltip,
 #fp-nav.fp-show-active a.active + .fp-tooltip {
