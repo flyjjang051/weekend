@@ -42,3 +42,54 @@ $.ajax({ url: "../data/typo.json" }).done(function (data) {
     });
   });
 });
+
+$(window).on("mousemove", function (e) {
+  gsap.to(".cursor", { duration: 0.1, left: e.clientX, top: e.clientY });
+  gsap.to(".cursorFollower", {
+    duration: 0.35,
+    left: e.clientX,
+    top: e.clientY,
+  });
+});
+$(".filter li").on("mouseenter", function () {
+  $(".cursor .txt").text("CLICK");
+  gsap.to(".cursor", {
+    width: 80,
+    height: 80,
+    ease: "elastic",
+    duration: 1,
+    backgroundColor: "#f00",
+  });
+});
+$(".filter li").on("mouseleave", function () {
+  $(".cursor .txt").text("");
+  gsap.to(".cursor", {
+    width: 10,
+    height: 10,
+    ease: "elastic",
+    duration: 1,
+    backgroundColor: "#fff",
+  });
+});
+
+//이벤트 위임  (delegate)
+$(".grid").on("mouseenter", "li", function () {
+  $(".cursor .txt").text("VIEW");
+  gsap.to(".cursor", {
+    width: 80,
+    height: 80,
+    ease: "elastic",
+    duration: 1,
+    backgroundColor: "#f00",
+  });
+});
+$(".grid").on("mouseleave", "li", function () {
+  $(".cursor .txt").text("");
+  gsap.to(".cursor", {
+    width: 10,
+    height: 10,
+    ease: "elastic",
+    duration: 1,
+    backgroundColor: "#fff",
+  });
+});
