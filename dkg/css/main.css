@@ -6,9 +6,9 @@
 
 .section .txtBox p strong { font-weight: 500; display: inline-block; position: relative; text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15); z-index: 1; }
 
-.section .txtBox p strong:after { content: ''; display: block; position: absolute; left: -10px; right: -10px; height: 10px; bottom: 5px; border-radius: 100px; z-index: -1; -webkit-transform-origin: 0 50%; transform-origin: 0 50%; }
+.section .txtBox p strong:after { content: ""; display: block; position: absolute; left: -10px; right: -10px; height: 10px; bottom: 5px; border-radius: 100px; z-index: -1; -webkit-transform-origin: 0 50%; transform-origin: 0 50%; }
 
-.section .txtBox a { display: inline-block; width: 200px; height: 60px; margin-top: 50px; line-height: 60px; border: 1px solid #fff; overflow: hidden; background-color: #0095cf; -webkit-transition: background-color 0.25s ease, color 0.25s ease, -webkit-box-shadow 0.25s ease; transition: background-color 0.25s ease, color 0.25s ease, -webkit-box-shadow 0.25s ease; transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease; transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, -webkit-box-shadow 0.25s ease; text-shadow: 1px 1px 0 #00709c,2px 2px 0 #00709c,3px 3px 0 #00709c,4px 4px 0 #00709c,5px 5px 0 #00709c,6px 6px 0 #00709c,7px 7px 0 #00709c,8px 8px 0 #00709c,9px 9px 0 #00709c,10px 10px 0 #00709c,11px 11px 0 #00709c,12px 12px 0 #00709c,13px 13px 0 #00709c,14px 14px 0 #00709c,15px 15px 0 #00709c,16px 16px 0 #00709c,17px 17px 0 #00709c,18px 18px 0 #00709c,19px 19px 0 #00709c,20px 20px 0 #00709c,21px 21px 0 #00709c,22px 22px 0 #00709c,23px 23px 0 #00709c,24px 24px 0 #00709c,25px 25px 0 #00709c,26px 26px 0 #00709c,27px 27px 0 #00709c,28px 28px 0 #00709c,29px 29px 0 #00709c,30px 30px 0 #00709c,31px 31px 0 #00709c,32px 32px 0 #00709c,33px 33px 0 #00709c,34px 34px 0 #00709c,35px 35px 0 #00709c,36px 36px 0 #00709c,37px 37px 0 #00709c,38px 38px 0 #00709c,39px 39px 0 #00709c,40px 40px 0 #00709c,41px 41px 0 #00709c,42px 42px 0 #00709c,43px 43px 0 #00709c,44px 44px 0 #00709c,45px 45px 0 #00709c,46px 46px 0 #00709c,47px 47px 0 #00709c,48px 48px 0 #00709c,50px 50px 0 #00709c;; }
+.section .txtBox a { display: inline-block; width: 200px; height: 60px; margin-top: 50px; line-height: 60px; border: 1px solid #fff; overflow: hidden; background-color: #0095cf; -webkit-transition: background-color 0.25s ease, color 0.25s ease, -webkit-box-shadow 0.25s ease; transition: background-color 0.25s ease, color 0.25s ease, -webkit-box-shadow 0.25s ease; transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease; transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, -webkit-box-shadow 0.25s ease; text-shadow: 1px 1px 0 #00709c,2px 2px 0 #00709c,3px 3px 0 #00709c,4px 4px 0 #00709c,5px 5px 0 #00709c,6px 6px 0 #00709c,7px 7px 0 #00709c,8px 8px 0 #00709c,9px 9px 0 #00709c,10px 10px 0 #00709c,11px 11px 0 #00709c,12px 12px 0 #00709c,13px 13px 0 #00709c,14px 14px 0 #00709c,15px 15px 0 #00709c,16px 16px 0 #00709c,17px 17px 0 #00709c,18px 18px 0 #00709c,19px 19px 0 #00709c,20px 20px 0 #00709c,21px 21px 0 #00709c,22px 22px 0 #00709c,23px 23px 0 #00709c,24px 24px 0 #00709c,25px 25px 0 #00709c,26px 26px 0 #00709c,27px 27px 0 #00709c,28px 28px 0 #00709c,29px 29px 0 #00709c,30px 30px 0 #00709c,31px 31px 0 #00709c,32px 32px 0 #00709c,33px 33px 0 #00709c,34px 34px 0 #00709c,35px 35px 0 #00709c,36px 36px 0 #00709c,37px 37px 0 #00709c,38px 38px 0 #00709c,39px 39px 0 #00709c,40px 40px 0 #00709c,41px 41px 0 #00709c,42px 42px 0 #00709c,43px 43px 0 #00709c,44px 44px 0 #00709c,45px 45px 0 #00709c,46px 46px 0 #00709c,47px 47px 0 #00709c,48px 48px 0 #00709c,50px 50px 0 #00709c;; }
 
 #mainVisual { height: 100vh; overflow: hidden; }
 
@@ -18,7 +18,7 @@
 
 #mainVisual .txtBox strong:after { background-color: #f33f12; }
 
-#business { height: 100vh; background: url("../images/main/bgBusiness.jpg") 50% no-repeat; background-size: cover; /* display: flex; flex-direction: column; justify-content: center; align-items: center; */ }
+#business { background: url("../images/main/bgBusiness.jpg") 50% no-repeat; background-size: cover; /* display: flex; flex-direction: column; justify-content: center; align-items: center; */ }
 
 #business .txtBox strong:after { background-color: #50f504; }
 
@@ -34,7 +34,7 @@
 
 #business .iconBox ul li .txt .title { margin: 15px 0; font-size: 2rem; }
 
-#portfolio { height: 50vh; background: url("../images/main/bgPortfolio.png") 50% no-repeat; background-size: cover; }
+#portfolio { background: url("../images/main/bgPortfolio.png") 50% no-repeat; background-size: cover; }
 
 #portfolio .txtBox strong:after { background-color: #0095cf; }
 
@@ -50,13 +50,13 @@
 
 #portfolio .portfolioBox ul li .icon img { width: 100%; }
 
-#portfolio .portfolioBox ul li .icon:before { content: ''; display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 0px solid #fff; -webkit-transition: all 0.15s ease-in-out; transition: all 0.15s ease-in-out; }
+#portfolio .portfolioBox ul li .icon:before { content: ""; display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 0px solid #fff; -webkit-transition: all 0.15s ease-in-out; transition: all 0.15s ease-in-out; }
 
 #portfolio .portfolioBox ul li .txt { font-size: 1.4rem; line-height: 1.5; font-weight: 300; }
 
 #portfolio .portfolioBox ul li .txt .title { margin: 15px 0; font-size: 2rem; }
 
-#community { height: 50vh; background: url("../images/main/bgCommunity.jpg") 50% no-repeat; background-size: cover; }
+#community { background: url("../images/main/bgCommunity.jpg") 50% no-repeat; background-size: cover; }
 
 #community .txtBox strong:after { background-color: #f37b0b; }
 

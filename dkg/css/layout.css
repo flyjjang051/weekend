@@ -1,10 +1,10 @@
 html { font-size: 10px; }
 
-body { font-family: "Roboto","Noto Sans KR"; font-size: 1.6rem; }
+body { font-family: "Roboto", "Noto Sans KR"; font-size: 1.6rem; }
 
 #header { position: fixed; width: 100%; height: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; color: #fff; z-index: 9; overflow: hidden; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
 
-#header:before { content: ''; display: block; width: 100%; height: 1px; background-color: #d9d9d9; position: absolute; top: 100px; opacity: 0; pointer-events: none; }
+#header:before { content: ""; display: block; width: 100%; height: 1px; background-color: #d9d9d9; position: absolute; top: 100px; opacity: 0; pointer-events: none; }
 
 #header.on { height: 400px; background-color: #fff; -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); color: #111; }
 
@@ -49,4 +49,3 @@ body { font-family: "Roboto","Noto Sans KR"; font-size: 1.6rem; }
 #footer .privacy a { font-weight: 700; }
 
 #footer .copyright { opacity: 1; }
-/*# sourceMappingURL=layout.css.map */
