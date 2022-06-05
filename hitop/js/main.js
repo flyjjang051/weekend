@@ -115,3 +115,18 @@ mainVisualTL
     ease: "power4",
     duration: 1,
   });
+// script  브라우져 환경에 최상위 객체는 window
+// state(상태)에 의한 변경이 이루어질때는 한곳에 쓰는게 좋다.
+$(window).on("scroll", function (e) {
+  //console.log($(window).scrollTop());
+  const st = $(window).scrollTop();
+  if (st > 100) {
+    //$(".btnTop").addClass("on");
+    //$("#header").addClass("on");
+    $("body").addClass("on");
+  } else {
+    //$(".btnTop").removeClass("on");
+    //$("#header").removeClass("on");
+    $("body").removeClass("on");
+  }
+});
