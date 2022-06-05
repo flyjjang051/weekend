@@ -74,3 +74,32 @@ section02TL
     scale: 3,
     opacity: 0,
   });
+const section03TL = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".section03",
+    markers: true,
+    start: "top top",
+    end: "bottom top",
+    scrub: 1,
+    pin: true,
+  },
+});
+section03TL
+  .from(".section03 .title .char", {
+    x: 100,
+    opacity: 0,
+    stagger: 0.1,
+  })
+  .from(".section03 .mainTxt .char", {
+    x: 100,
+    opacity: 0,
+  })
+  .from(".section03 .list > li", {
+    scale: 0,
+    opacity: 0,
+    stagger: 0.2,
+  })
+  .from(".section03 .airplane", {
+    scale: 3,
+    opacity: 0,
+  });
